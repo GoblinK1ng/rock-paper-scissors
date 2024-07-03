@@ -1,6 +1,15 @@
 let humanScore = 0;
 let computerScore = 0;
 
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach((button) =>{
+    button.addEventListener("click", () =>{
+        console.log(button.id);
+        playRound(button.id,getComputerChoice());
+    });
+});
+
 function getComputerChoice(){
     let choice = Math.random();
     if (choice < 1/3) return "rock";
@@ -38,5 +47,3 @@ function playGame(amount){
     }
     console.log(humanScore,computerScore);
 }
-
-playGame(5);
