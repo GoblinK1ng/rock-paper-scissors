@@ -9,10 +9,24 @@ buttons.forEach((button) =>{
         let something = computerScore;
         playRound(button.id,getComputerChoice());
         
-        resultsSection.textContent = "Score: "+ humanScore +" "+computerScore;
+        if (humanScore === 5){
+            resultsSection.textContent = "Player Wins";
+        }
+        else if (computerScore === 5){
+            resultsSection.textContent = "Computer Wins";
+        }
+        else resultsSection.textContent = "Score: "+ humanScore +" "+computerScore;
+        
+    
     });
 });
 
+if (humanScore === 5){
+    resultsSection.textContent = "Player Wins";
+}
+else if (computerScore === 5){
+    resultsSection.textContent = "Computer Wins";
+}
 
 
 function getComputerChoice(){
