@@ -2,19 +2,24 @@ let humanScore = 0;
 let computerScore = 0;
 
 const buttons = document.querySelectorAll("button");
+const resultsSection = document.querySelector(".results");
 
 buttons.forEach((button) =>{
     button.addEventListener("click", () =>{
-        console.log(button.id);
+        let something = computerScore;
         playRound(button.id,getComputerChoice());
+        
+        resultsSection.textContent = "Score: "+ humanScore +" "+computerScore;
     });
 });
 
+
+
 function getComputerChoice(){
     let choice = Math.random();
-    if (choice < 1/3) return "rock";
-    else if (choice > 2/3) return "paper";
-    else return "scissors";
+    if (choice < 1/3 && choice > 0) return "rock";
+    else if (choice > 2/3 && choice < 1) return "paper";
+    else if (choice > 0) return "scissors";
 }
 
 function getHumanChoice(){
