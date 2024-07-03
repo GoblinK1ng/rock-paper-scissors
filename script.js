@@ -21,13 +21,6 @@ buttons.forEach((button) =>{
     });
 });
 
-if (humanScore === 5){
-    resultsSection.textContent = "Player Wins";
-}
-else if (computerScore === 5){
-    resultsSection.textContent = "Computer Wins";
-}
-
 
 function getComputerChoice(){
     let choice = Math.random();
