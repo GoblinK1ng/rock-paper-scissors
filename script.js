@@ -11,9 +11,13 @@ buttons.forEach((button) =>{
         
         if (humanScore === 5){
             resultsSection.textContent = "Player Wins";
+            humanScore = 0;
+            computerScore = 0;
         }
         else if (computerScore === 5){
             resultsSection.textContent = "Computer Wins";
+            humanScore = 0;
+            computerScore = 0;
         }
         else resultsSection.textContent = "Score: "+ humanScore +" "+computerScore;
         
